@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="topBlue" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#39BFFF"/>
+      <stop offset="100%" stop-color="#3AC0FF"/>
+    </linearGradient>
+
+    <linearGradient id="middleBlue" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#28A8F5"/>
+      <stop offset="100%" stop-color="#39BFFF"/>
+    </linearGradient>
+
+    <linearGradient id="lowerLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2099EE"/>
+      <stop offset="100%" stop-color="#2196F3"/>
+    </linearGradient>
+
+    <linearGradient id="lowerRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D6CC4"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+
+    <linearGradient id="darkFacet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0756A7"/>
+      <stop offset="100%" stop-color="#0B4D99"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Upper Flutter shape -->
+  <polygon
+    points="272,475 537,208 732,208 369,572"
+    fill="url(#topBlue)"/>
+
+  <!-- Upper-right / middle shape -->
+  <polygon
+    points="396,600 552,443 732,443 593,581 552,581 465,668"
+    fill="url(#middleBlue)"/>
+
+  <!-- Lower-left facet -->
+  <polygon
+    points="396,600 485,512 552,581 465,668"
+    fill="url(#lowerLeft)"/>
+
+  <!-- Small dark connecting facet -->
+  <polygon
+    points="465,668 552,581 593,581 485,689"
+    fill="url(#darkFacet)"/>
+
+  <!-- Bottom/right shape -->
+  <polygon
+    points="485,689 552,581 593,581 748,734 529,734"
+    fill="url(#lowerRight)"/>
+</svg>

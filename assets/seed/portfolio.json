@@ -1,0 +1,924 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "content": {
+    "projects": [
+      {
+        "title": "BA_FindWay",
+        "description": "Offline Egyptian movie, TV series and theater guessing game for Android and iOS. The desktop Python app remains separate; this is a native Flutter reimplementation with a shared Dart game engine and responsive touch interface.",
+        "imagePaths": [
+          "assets/images/findway1.png",
+          "assets/images/findway2.png",
+          "assets/images/findway3.png",
+          "assets/images/findway4.png",
+          "assets/images/findway5.png",
+          "assets/images/findway6.png",
+          "assets/images/findway7.png",
+          "assets/images/findway8.png",
+          "assets/images/findway9.png",
+          "assets/images/findway10.png",
+          "assets/images/findway11.png",
+          "assets/images/findway12.png"
+        ],
+        "techStack": [
+          "Unity",
+          "C#",
+          "Windows App",
+          "Game Development",
+          "VISTA"
+        ],
+        "id": "project-001",
+        "revision": 1,
+        "liveUrl": null,
+        "githubUrl": null
+      },
+      {
+        "title": "Aflam Night",
+        "description": "Offline Egyptian movie, TV series and theater guessing game for Android and iOS. The desktop Python app remains separate; this is a native Flutter reimplementation with a shared Dart game engine and responsive touch interface.",
+        "imagePaths": [
+          "assets/images/aflam_pair1_landscape.jpg",
+          "assets/images/aflam_pair2_landscape.jpg",
+          "assets/images/aflam_pair3_landscape.jpg"
+        ],
+        "techStack": [
+          "Flutter",
+          "Dart",
+          "Mobile Development",
+          "Cross Platform"
+        ],
+        "githubUrl": "https://github.com/Aswani20/aflam_night_mobile",
+        "liveUrl": "https://github.com/Aswani20/aflam_night_mobile/releases/tag/v1.0.0",
+        "id": "project-002",
+        "revision": 1
+      },
+      {
+        "title": "Flowery Driver App",
+        "description": "A modern Flutter Flowery application built with Clean Architecture. The app allows driver to browse orders, add pick it up from store, and manage deliver it to user.",
+        "imagePaths": [
+          "assets/images/flower_driver.png"
+        ],
+        "techStack": [
+          "Flutter",
+          "Dart",
+          "Firebase",
+          "API",
+          "Mobile Development",
+          "Cross Platform"
+        ],
+        "githubUrl": "https://github.com/Aswani20/flowery-driver",
+        "id": "project-003",
+        "revision": 1,
+        "liveUrl": null
+      },
+      {
+        "title": "Flower App",
+        "description": "A modern Flutter e-commerce application built with Clean Architecture. The app allows users to browse products, add them to cart, and manage orders efficiently.",
+        "imagePaths": [
+          "assets/images/flower_app.png"
+        ],
+        "techStack": [
+          "Flutter",
+          "Dart",
+          "Firebase",
+          "API",
+          "Mobile Development",
+          "Cross Platform"
+        ],
+        "githubUrl": "https://github.com/Aswani20/flower_app",
+        "id": "project-004",
+        "revision": 1,
+        "liveUrl": null
+      },
+      {
+        "title": "Todo App",
+        "description": "A simple and efficient Todo app to help users organize their tasks. he app features task creation, editing, and deletion, with options to mark tasks as complete.",
+        "imagePaths": [
+          "assets/images/todo_app.png"
+        ],
+        "techStack": [
+          "Flutter",
+          "Dart",
+          "Firebase",
+          "Mobile Development",
+          "Cross Platform"
+        ],
+        "githubUrl": "https://github.com/Aswani20/todo_application",
+        "id": "project-005",
+        "revision": 1,
+        "liveUrl": null
+      },
+      {
+        "title": "Happy Paws",
+        "description": "Pet platform with all supplies and services that any pet owner will need ",
+        "imagePaths": [
+          "assets/images/happy_paw.png"
+        ],
+        "techStack": [
+          "Angular",
+          "Typescript",
+          "PrimeNG",
+          "PWA",
+          "Web Development"
+        ],
+        "liveUrl": "https://karim-mamdouh.github.io/Happy-Paws/home",
+        "githubUrl": "https://github.com/karim-mamdouh/Happy-Paws",
+        "id": "project-006",
+        "revision": 1
+      },
+      {
+        "title": "Yummy🍽Taste",
+        "description": "Recipes web application where you can view and save your favourite recipes",
+        "imagePaths": [
+          "assets/images/yummy_test.png"
+        ],
+        "techStack": [
+          "Angular",
+          "Typescript",
+          "PrimeNG",
+          "PWA",
+          "Web Development"
+        ],
+        "liveUrl": "https://karim-mamdouh.github.io/Yummy-Taste-Angular/",
+        "githubUrl": "https://github.com/karim-mamdouh/Yummy-Taste-Angular",
+        "id": "project-007",
+        "revision": 1
+      },
+      {
+        "title": "Memory Game",
+        "description": "It's a flip cards game",
+        "imagePaths": [
+          "assets/images/memory_game.png"
+        ],
+        "techStack": [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "Web Development"
+        ],
+        "liveUrl": "https://aswani20.github.io/Memory-Game/",
+        "githubUrl": "https://github.com/Aswani20/Memory-Game",
+        "id": "project-008",
+        "revision": 1
+      }
+    ],
+    "education": [
+      {
+        "degree": "Backend Diploma (PHP & Laravel)",
+        "institution": "Route Academy",
+        "duration": "Fab 2026 - Present",
+        "location": "Online",
+        "isCurrent": true,
+        "id": "education-001",
+        "revision": 1,
+        "certificateUrl": null
+      },
+      {
+        "degree": "Flutter Advanced bootcamp",
+        "institution": "Elevate Tech",
+        "duration": "July 2025 - Nov 2025",
+        "location": "Online",
+        "id": "education-002",
+        "revision": 1,
+        "isCurrent": false,
+        "certificateUrl": null
+      },
+      {
+        "degree": "Flutter diploma",
+        "institution": "Route Academy",
+        "duration": "July 2023 - Nov 2023",
+        "location": "Alexandria Branch",
+        "id": "education-003",
+        "revision": 1,
+        "isCurrent": false,
+        "certificateUrl": null
+      },
+      {
+        "degree": "Front End & Cross-platform ITP Track",
+        "institution": "Information technology Institute (ITI)",
+        "duration": "April 2022 - Aug 2022",
+        "location": "Alexandria, Egypt",
+        "id": "education-004",
+        "revision": 1,
+        "isCurrent": false,
+        "certificateUrl": null
+      },
+      {
+        "degree": "Bachelor Of Science in Physics and Computer Science",
+        "institution": "Helwan University",
+        "duration": "2015 — 2019",
+        "location": "Cairo, Egypt",
+        "id": "education-005",
+        "revision": 1,
+        "isCurrent": false,
+        "certificateUrl": null
+      }
+    ],
+    "experiences": [
+      {
+        "role": "Junior Software Developer",
+        "company": "Bibliotheca Alexandrina",
+        "duration": "Jan 2024 — Present",
+        "location": "Alexandria, Egypt",
+        "isCurrent": true,
+        "highlights": [
+          "Created immersive 3D and VR environments with Virtual Immersive Scientific and Technological Applications (VISTA) team",
+          "Aimed at aiding researchers in visualizing data, employing both Unreal Engine and Unity. ",
+          "Collaborated with researchers to grasp their requirements and transform them into practical, user-centric virtual environments. "
+        ],
+        "id": "experience-001",
+        "revision": 1,
+        "milestones": []
+      },
+      {
+        "role": "Senior Flutter Mentor",
+        "company": "Route Academy",
+        "duration": "Oct 2025 – Present",
+        "location": "Alexandria, Egypt",
+        "isCurrent": true,
+        "highlights": [
+          "My responsibility is to guide students in route by teaching flutter.",
+          "mark and review their code and send them feedback to enhance their code and teach them extra and advanced topics."
+        ],
+        "milestones": [
+          {
+            "title": "Flutter Mentor",
+            "duration": "May 2024 - Oct 2025",
+            "type": "Joined",
+            "highlights": [
+              "reinforce the official curriculum throughweekly recap/practical workshops, provide timely, high-quality feedback on assignments, runoffice hours, and partner closely with instructors to detect learner risks early and resolvethem quickly. You are technically strong and student-centric."
+            ],
+            "id": "experience-002-milestone-001",
+            "revision": 1
+          }
+        ],
+        "id": "experience-002",
+        "revision": 1
+      },
+      {
+        "role": "Teaching Assistant",
+        "company": "Egypt-Japan University of Science and Technology",
+        "duration": "Oct 2022 – Jan 2024",
+        "location": "Borg el_arab, Alexandria, Egypt",
+        "highlights": [
+          "My responsibility is to guide students in the Computer Science field.",
+          " teaching Software Engineering, Fundamental of programming, Advanced programming and OOP Concept, Operating Systems, \nhow to use Linux and interact with command line, Embedded Systems, Network and Computer Graphics."
+        ],
+        "id": "experience-003",
+        "revision": 1,
+        "isCurrent": false,
+        "milestones": []
+      }
+    ],
+    "skillCategories": [
+      {
+        "title": "Mobile Development",
+        "skills": [
+          {
+            "label": "Flutter",
+            "id": "category-001-skill-001",
+            "revision": 1,
+            "assetPath": "assets/icons/flutter.svg",
+            "colorValue": 4282677665,
+            "themeAdaptive": false
+          },
+          {
+            "label": "Dart",
+            "id": "category-001-skill-002",
+            "revision": 1,
+            "assetPath": "assets/icons/dart.svg",
+            "colorValue": 4282677665,
+            "themeAdaptive": false
+          },
+          {
+            "label": "Firebase",
+            "id": "category-001-skill-003",
+            "revision": 1,
+            "assetPath": "assets/icons/firebase.svg",
+            "colorValue": 4294953512,
+            "themeAdaptive": false
+          }
+        ],
+        "id": "category-001",
+        "revision": 1
+      },
+      {
+        "title": "Backend & Database",
+        "skills": [
+          {
+            "label": "PHP",
+            "id": "category-002-skill-001",
+            "revision": 1,
+            "assetPath": "assets/icons/php.svg",
+            "colorValue": 4286020532,
+            "themeAdaptive": false
+          },
+          {
+            "label": "Laravel",
+            "id": "category-002-skill-002",
+            "revision": 1,
+            "assetPath": "assets/icons/laravel.svg",
+            "colorValue": 4294913312,
+            "themeAdaptive": false
+          },
+          {
+            "label": "MySQL",
+            "id": "category-002-skill-003",
+            "revision": 1,
+            "assetPath": "assets/icons/mysql.svg",
+            "colorValue": 4282677665,
+            "themeAdaptive": false
+          }
+        ],
+        "id": "category-002",
+        "revision": 1
+      },
+      {
+        "title": "Game Development",
+        "skills": [
+          {
+            "label": "Unity",
+            "themeAdaptive": true,
+            "id": "category-003-skill-001",
+            "revision": 1,
+            "assetPath": "assets/icons/unity.svg",
+            "colorValue": 4282006074
+          },
+          {
+            "label": "Unreal Engine",
+            "themeAdaptive": true,
+            "id": "category-003-skill-002",
+            "revision": 1,
+            "assetPath": "assets/icons/unreal_engine.svg",
+            "colorValue": 4279111976
+          },
+          {
+            "label": "C++",
+            "id": "category-003-skill-003",
+            "revision": 1,
+            "assetPath": "assets/icons/cplusplus.svg",
+            "colorValue": 4286020532,
+            "themeAdaptive": false
+          },
+          {
+            "label": "C#",
+            "id": "category-003-skill-004",
+            "revision": 1,
+            "assetPath": "assets/icons/csharp.svg",
+            "colorValue": 4283695281,
+            "themeAdaptive": false
+          },
+          {
+            "label": "Blueprint",
+            "id": "category-003-skill-005",
+            "revision": 1,
+            "assetPath": "assets/icons/blueprint.svg",
+            "colorValue": 4294953512,
+            "themeAdaptive": false
+          }
+        ],
+        "id": "category-003",
+        "revision": 1
+      },
+      {
+        "title": "Tools",
+        "skills": [
+          {
+            "label": "Git",
+            "id": "category-004-skill-001",
+            "revision": 1,
+            "assetPath": "assets/icons/git.svg",
+            "colorValue": 4293939250,
+            "themeAdaptive": false
+          },
+          {
+            "label": "GitHub",
+            "themeAdaptive": true,
+            "id": "category-004-skill-002",
+            "revision": 1,
+            "assetPath": "assets/icons/github.svg",
+            "colorValue": 4279768855
+          },
+          {
+            "label": "Figma",
+            "id": "category-004-skill-003",
+            "revision": 1,
+            "assetPath": "assets/icons/figma.svg",
+            "colorValue": 4294069790,
+            "themeAdaptive": false
+          },
+          {
+            "label": "Postman",
+            "id": "category-004-skill-004",
+            "revision": 1,
+            "assetPath": "assets/icons/postman.svg",
+            "colorValue": 4294929463,
+            "themeAdaptive": false
+          }
+        ],
+        "id": "category-004",
+        "revision": 1
+      }
+    ],
+    "profiles": [
+      {
+        "id": "profile-main",
+        "revision": 1,
+        "name": "Abdelrahman Youssef",
+        "heroName": "\t Abdelrahman Youssef\"",
+        "heroTitle": "\"  Software Developer  \"",
+        "tagline": "I design and build clean, performant apps for mobile, Games, VR and backend (Laravel) — turning ideas into products people enjoy using.",
+        "photoPath": "assets/images/profile.jpeg",
+        "primaryCtaLabel": "View My Work",
+        "primaryCtaTarget": "projects",
+        "secondaryCtaLabel": "Get In Touch",
+        "secondaryCtaTarget": "contact",
+        "bio": "I'm a developer who enjoys turning ideas into fast, polished products — from pixel-perfect interfaces to the logic that runs behind them. I care about clean code, good UX, and shipping things that actually get used.",
+        "personalDetails": [
+          {
+            "icon": "person_outline",
+            "label": "Name",
+            "value": "Abdelrahman Youssef",
+            "id": "personal-detail-001",
+            "revision": 1
+          },
+          {
+            "icon": "email_outlined",
+            "label": "Email",
+            "value": "abdelrahmanyoussef511997@gmail.com",
+            "id": "personal-detail-002",
+            "revision": 1
+          },
+          {
+            "icon": "phone_outlined",
+            "label": "Phone",
+            "value": "+20 100 190 4592",
+            "id": "personal-detail-003",
+            "revision": 1
+          }
+        ],
+        "email": "abdelrahmanyoussef511997@gmail.com",
+        "phone": "+20 100 190 4592",
+        "location": "Giza, Egypt",
+        "socialLinks": [
+          {
+            "label": "GitHub",
+            "url": "https://github.com/Aswani20",
+            "iconPath": "assets/icons/github.svg",
+            "id": "social-001",
+            "revision": 1
+          },
+          {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/in/abdelrahman-youssef/",
+            "iconPath": "assets/icons/linkedin.svg",
+            "id": "social-002",
+            "revision": 1
+          },
+          {
+            "label": "WhatsApp",
+            "url": "https://wa.me/201001904592",
+            "iconPath": "assets/icons/whatsapp.svg",
+            "id": "social-003",
+            "revision": 1
+          }
+        ],
+        "orbitIconPaths": [
+          "assets/icons/flutter.svg",
+          "assets/icons/unity.svg",
+          "assets/icons/unreal.svg",
+          "assets/icons/laravel.svg",
+          "assets/icons/dart.svg",
+          "assets/icons/mysql.svg",
+          "assets/icons/php.svg"
+        ]
+      }
+    ],
+    "media": [
+      {
+        "id": "media-001",
+        "revision": 1,
+        "sourcePath": "assets/icons/blueprint.svg",
+        "localPath": "media/assets/icons/blueprint.svg",
+        "kind": "icon",
+        "label": "blueprint.svg"
+      },
+      {
+        "id": "media-002",
+        "revision": 1,
+        "sourcePath": "assets/icons/cplusplus.svg",
+        "localPath": "media/assets/icons/cplusplus.svg",
+        "kind": "icon",
+        "label": "cplusplus.svg"
+      },
+      {
+        "id": "media-003",
+        "revision": 1,
+        "sourcePath": "assets/icons/csharp.svg",
+        "localPath": "media/assets/icons/csharp.svg",
+        "kind": "icon",
+        "label": "csharp.svg"
+      },
+      {
+        "id": "media-004",
+        "revision": 1,
+        "sourcePath": "assets/icons/dart.svg",
+        "localPath": "media/assets/icons/dart.svg",
+        "kind": "icon",
+        "label": "dart.svg"
+      },
+      {
+        "id": "media-005",
+        "revision": 1,
+        "sourcePath": "assets/icons/figma.svg",
+        "localPath": "media/assets/icons/figma.svg",
+        "kind": "icon",
+        "label": "figma.svg"
+      },
+      {
+        "id": "media-006",
+        "revision": 1,
+        "sourcePath": "assets/icons/firebase.svg",
+        "localPath": "media/assets/icons/firebase.svg",
+        "kind": "icon",
+        "label": "firebase.svg"
+      },
+      {
+        "id": "media-007",
+        "revision": 1,
+        "sourcePath": "assets/icons/flutter.svg",
+        "localPath": "media/assets/icons/flutter.svg",
+        "kind": "icon",
+        "label": "flutter.svg"
+      },
+      {
+        "id": "media-008",
+        "revision": 1,
+        "sourcePath": "assets/icons/git.svg",
+        "localPath": "media/assets/icons/git.svg",
+        "kind": "icon",
+        "label": "git.svg"
+      },
+      {
+        "id": "media-009",
+        "revision": 1,
+        "sourcePath": "assets/icons/github.svg",
+        "localPath": "media/assets/icons/github.svg",
+        "kind": "icon",
+        "label": "github.svg"
+      },
+      {
+        "id": "media-010",
+        "revision": 1,
+        "sourcePath": "assets/icons/laravel.svg",
+        "localPath": "media/assets/icons/laravel.svg",
+        "kind": "icon",
+        "label": "laravel.svg"
+      },
+      {
+        "id": "media-011",
+        "revision": 1,
+        "sourcePath": "assets/icons/linkedin.svg",
+        "localPath": "media/assets/icons/linkedin.svg",
+        "kind": "icon",
+        "label": "linkedin.svg"
+      },
+      {
+        "id": "media-012",
+        "revision": 1,
+        "sourcePath": "assets/icons/mysql.svg",
+        "localPath": "media/assets/icons/mysql.svg",
+        "kind": "icon",
+        "label": "mysql.svg"
+      },
+      {
+        "id": "media-013",
+        "revision": 1,
+        "sourcePath": "assets/icons/php.svg",
+        "localPath": "media/assets/icons/php.svg",
+        "kind": "icon",
+        "label": "php.svg"
+      },
+      {
+        "id": "media-014",
+        "revision": 1,
+        "sourcePath": "assets/icons/postman.svg",
+        "localPath": "media/assets/icons/postman.svg",
+        "kind": "icon",
+        "label": "postman.svg"
+      },
+      {
+        "id": "media-015",
+        "revision": 1,
+        "sourcePath": "assets/icons/unity.svg",
+        "localPath": "media/assets/icons/unity.svg",
+        "kind": "icon",
+        "label": "unity.svg"
+      },
+      {
+        "id": "media-016",
+        "revision": 1,
+        "sourcePath": "assets/icons/unreal.svg",
+        "localPath": "media/assets/icons/unreal.svg",
+        "kind": "icon",
+        "label": "unreal.svg"
+      },
+      {
+        "id": "media-017",
+        "revision": 1,
+        "sourcePath": "assets/icons/unreal_engine.svg",
+        "localPath": "media/assets/icons/unreal_engine.svg",
+        "kind": "icon",
+        "label": "unreal_engine.svg"
+      },
+      {
+        "id": "media-018",
+        "revision": 1,
+        "sourcePath": "assets/icons/whatsapp.svg",
+        "localPath": "media/assets/icons/whatsapp.svg",
+        "kind": "icon",
+        "label": "whatsapp.svg"
+      },
+      {
+        "id": "media-019",
+        "revision": 1,
+        "sourcePath": "assets/icons/x.svg",
+        "localPath": "media/assets/icons/x.svg",
+        "kind": "icon",
+        "label": "x.svg"
+      },
+      {
+        "id": "media-020",
+        "revision": 1,
+        "sourcePath": "assets/images/aflam_pair1_landscape.jpg",
+        "localPath": "media/assets/images/aflam_pair1_landscape.jpg",
+        "kind": "image",
+        "label": "aflam_pair1_landscape.jpg"
+      },
+      {
+        "id": "media-021",
+        "revision": 1,
+        "sourcePath": "assets/images/aflam_pair2_landscape.jpg",
+        "localPath": "media/assets/images/aflam_pair2_landscape.jpg",
+        "kind": "image",
+        "label": "aflam_pair2_landscape.jpg"
+      },
+      {
+        "id": "media-022",
+        "revision": 1,
+        "sourcePath": "assets/images/aflam_pair3_landscape.jpg",
+        "localPath": "media/assets/images/aflam_pair3_landscape.jpg",
+        "kind": "image",
+        "label": "aflam_pair3_landscape.jpg"
+      },
+      {
+        "id": "media-023",
+        "revision": 1,
+        "sourcePath": "assets/images/findway1.png",
+        "localPath": "media/assets/images/findway1.png",
+        "kind": "image",
+        "label": "findway1.png"
+      },
+      {
+        "id": "media-024",
+        "revision": 1,
+        "sourcePath": "assets/images/findway10.png",
+        "localPath": "media/assets/images/findway10.png",
+        "kind": "image",
+        "label": "findway10.png"
+      },
+      {
+        "id": "media-025",
+        "revision": 1,
+        "sourcePath": "assets/images/findway11.png",
+        "localPath": "media/assets/images/findway11.png",
+        "kind": "image",
+        "label": "findway11.png"
+      },
+      {
+        "id": "media-026",
+        "revision": 1,
+        "sourcePath": "assets/images/findway12.png",
+        "localPath": "media/assets/images/findway12.png",
+        "kind": "image",
+        "label": "findway12.png"
+      },
+      {
+        "id": "media-027",
+        "revision": 1,
+        "sourcePath": "assets/images/findway2.png",
+        "localPath": "media/assets/images/findway2.png",
+        "kind": "image",
+        "label": "findway2.png"
+      },
+      {
+        "id": "media-028",
+        "revision": 1,
+        "sourcePath": "assets/images/findway3.png",
+        "localPath": "media/assets/images/findway3.png",
+        "kind": "image",
+        "label": "findway3.png"
+      },
+      {
+        "id": "media-029",
+        "revision": 1,
+        "sourcePath": "assets/images/findway4.png",
+        "localPath": "media/assets/images/findway4.png",
+        "kind": "image",
+        "label": "findway4.png"
+      },
+      {
+        "id": "media-030",
+        "revision": 1,
+        "sourcePath": "assets/images/findway5.png",
+        "localPath": "media/assets/images/findway5.png",
+        "kind": "image",
+        "label": "findway5.png"
+      },
+      {
+        "id": "media-031",
+        "revision": 1,
+        "sourcePath": "assets/images/findway6.png",
+        "localPath": "media/assets/images/findway6.png",
+        "kind": "image",
+        "label": "findway6.png"
+      },
+      {
+        "id": "media-032",
+        "revision": 1,
+        "sourcePath": "assets/images/findway7.png",
+        "localPath": "media/assets/images/findway7.png",
+        "kind": "image",
+        "label": "findway7.png"
+      },
+      {
+        "id": "media-033",
+        "revision": 1,
+        "sourcePath": "assets/images/findway8.png",
+        "localPath": "media/assets/images/findway8.png",
+        "kind": "image",
+        "label": "findway8.png"
+      },
+      {
+        "id": "media-034",
+        "revision": 1,
+        "sourcePath": "assets/images/findway9.png",
+        "localPath": "media/assets/images/findway9.png",
+        "kind": "image",
+        "label": "findway9.png"
+      },
+      {
+        "id": "media-035",
+        "revision": 1,
+        "sourcePath": "assets/images/flower_app.png",
+        "localPath": "media/assets/images/flower_app.png",
+        "kind": "image",
+        "label": "flower_app.png"
+      },
+      {
+        "id": "media-036",
+        "revision": 1,
+        "sourcePath": "assets/images/flower_driver.png",
+        "localPath": "media/assets/images/flower_driver.png",
+        "kind": "image",
+        "label": "flower_driver.png"
+      },
+      {
+        "id": "media-037",
+        "revision": 1,
+        "sourcePath": "assets/images/happy_paw.png",
+        "localPath": "media/assets/images/happy_paw.png",
+        "kind": "image",
+        "label": "happy_paw.png"
+      },
+      {
+        "id": "media-038",
+        "revision": 1,
+        "sourcePath": "assets/images/memory_game.png",
+        "localPath": "media/assets/images/memory_game.png",
+        "kind": "image",
+        "label": "memory_game.png"
+      },
+      {
+        "id": "media-039",
+        "revision": 1,
+        "sourcePath": "assets/images/profile.jpeg",
+        "localPath": "media/assets/images/profile.jpeg",
+        "kind": "image",
+        "label": "profile.jpeg"
+      },
+      {
+        "id": "media-040",
+        "revision": 1,
+        "sourcePath": "assets/images/todo_app.png",
+        "localPath": "media/assets/images/todo_app.png",
+        "kind": "image",
+        "label": "todo_app.png"
+      },
+      {
+        "id": "media-041",
+        "revision": 1,
+        "sourcePath": "assets/images/yummy_test.png",
+        "localPath": "media/assets/images/yummy_test.png",
+        "kind": "image",
+        "label": "yummy_test.png"
+      },
+      {
+        "id": "media-042",
+        "revision": 1,
+        "sourcePath": "web/cv.pdf",
+        "localPath": "media/web/cv.pdf",
+        "kind": "document",
+        "label": "cv.pdf"
+      }
+    ],
+    "settings": [
+      {
+        "id": "settings-main",
+        "revision": 1,
+        "brandName": "Abdelrahman",
+        "brandSuffix": ".dev",
+        "appTitle": "My Portfolio",
+        "browserTitle": "My Portfolio",
+        "description": "My personal portfolio",
+        "cvPath": "web/cv.pdf",
+        "cvLabel": "Download CV",
+        "cvDownloadFilename": "\t Abdelrahman Youssef\"_CV.pdf",
+        "navigationLabels": [
+          {
+            "id": "hero",
+            "revision": 1,
+            "label": "Home"
+          },
+          {
+            "id": "about",
+            "revision": 1,
+            "label": "About"
+          },
+          {
+            "id": "skills",
+            "revision": 1,
+            "label": "Skills"
+          },
+          {
+            "id": "projects",
+            "revision": 1,
+            "label": "Projects"
+          },
+          {
+            "id": "education",
+            "revision": 1,
+            "label": "Education"
+          },
+          {
+            "id": "experience",
+            "revision": 1,
+            "label": "Experience"
+          },
+          {
+            "id": "contact",
+            "revision": 1,
+            "label": "Contact"
+          }
+        ]
+      }
+    ],
+    "sectionContent": [
+      {
+        "id": "about",
+        "revision": 1,
+        "heading": "About Me",
+        "subtitle": ""
+      },
+      {
+        "id": "skills",
+        "revision": 1,
+        "heading": "Skills",
+        "subtitle": "Technologies and tools I work with regularly."
+      },
+      {
+        "id": "projects",
+        "revision": 1,
+        "heading": "Projects",
+        "subtitle": "A few things I've built recently."
+      },
+      {
+        "id": "education",
+        "revision": 1,
+        "heading": "Education",
+        "subtitle": "My academic background and qualifications."
+      },
+      {
+        "id": "experience",
+        "revision": 1,
+        "heading": "Experience",
+        "subtitle": "Where I've worked and what I did there."
+      },
+      {
+        "id": "contact",
+        "revision": 1,
+        "heading": "Let's Talk",
+        "subtitle": "Have a project in mind or just want to say hi? I'd love to hear from you."
+      }
+    ]
+  }
+}

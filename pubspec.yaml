@@ -1,0 +1,28 @@
+name: portfolio_admin_dashboard
+description: "Windows dashboard for managing portfolio content."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.1
+
+dependencies:
+  crypto: ^3.0.7
+  file_selector: ^1.1.0
+  flutter:
+    sdk: flutter
+  image: ^4.12.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/seed/portfolio.json
+    - assets/seed/media/assets/images/
+    - assets/seed/media/assets/icons/
+    - assets/seed/media/web/
+
