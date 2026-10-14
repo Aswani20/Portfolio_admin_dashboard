@@ -22,7 +22,7 @@ class JsonPortfolioStore {
   JsonPortfolioStore(this.directory);
   final Directory directory;
   static final Map<String, Future<void>> _queues = {};
-  static const schemaVersion = 1;
+  static const schemaVersion = 2;
 
   static Directory applicationDirectory() {
     final base = Platform.environment['LOCALAPPDATA'];
@@ -67,7 +67,7 @@ class JsonPortfolioStore {
     // A failure after this marker must never silently reseed over partial data.
     await marker.create(exclusive: true);
     await marker.writeAsString(
-      'Portfolio Admin Dashboard schema 1\n',
+      'Portfolio Admin Dashboard schema 2\n',
       flush: true,
     );
     for (final asset in seed.content.media) {
@@ -344,7 +344,7 @@ class JsonPortfolioStore {
 
   _Snapshot _decode(String text) {
     final document = jsonObject(jsonDecode(text));
-    if (document['schemaVersion'] != schemaVersion) {
+    if (![1, schemaVersion].contains(document['schemaVersion'])) {
       throw StoreException(
         'Unsupported local data schema: ${document['schemaVersion']}. Existing data was preserved.',
       );
@@ -353,6 +353,13 @@ class JsonPortfolioStore {
         document['revision'] is! int ||
         (document['revision'] as int) < 1) {
       throw const FormatException('Invalid snapshot header.');
+    }
+    final raw = jsonObject(document['content']);
+    if ((document['schemaVersion'] == 1 && raw.containsKey('articles')) ||
+        (document['schemaVersion'] == 2 && !raw.containsKey('articles'))) {
+      throw const FormatException(
+        'Collections do not match the snapshot schema.',
+      );
     }
     return _Snapshot(
       document['revision'] as int,

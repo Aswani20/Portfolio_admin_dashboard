@@ -175,3 +175,8 @@ Updated the local store and regression tests for media repair and snapshot-histo
 ## Local Windows finalization
 
 Created `docs/LOCAL_RELEASE.md`; updated README and verification documentation. Rebuilt and verified the Windows release bundle.
+
+## Static Articles additions
+
+- Dashboard: `lib/services/article_export.dart`, `test/articles_repository_test.dart`, `test/articles_management_test.dart`, `docs/ARTICLES.md`. Existing model, repository, storage, content editor/navigation, migration verifier and backup documentation extended.
+- Website sibling: `assets/content/articles.json`, `lib/models/article.dart`, `lib/widgets/sections/articles_section.dart`, `test/articles_test.dart`; app, navbar, pubspec and README updated.

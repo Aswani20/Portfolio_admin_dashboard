@@ -58,3 +58,11 @@ See [RELIABILITY_REVIEW.md](RELIABILITY_REVIEW.md). Dependency resolution, forma
 ## Local Windows finalization — 2026-10-11
 
 README reviewed and rewritten for the actual local workflow. Doctor, analysis and release build passed. Required release artifacts and all 42 bundled seed media files verified. See [LOCAL_RELEASE.md](LOCAL_RELEASE.md) for the exact output, executable checksum and limits. No application source changes in this phase.
+
+## Static Articles — 2026-10-13
+
+- Dashboard: 85 tests passed; Flutter analysis clean; Windows release built successfully.
+- Website: 4 article tests passed at 390, 1100 and 1440 pixel widths, including empty navigation/section and reading behavior; web release build passed. Full website analysis reports 10 existing informational lint/deprecation notices in unchanged files (no new article errors).
+- Article repository tests cover CRUD, ordering, duplicate protection, body preservation, published-only export, backup restoration, reopen persistence, strict dates and schema-1 migration without overwriting history. Widget test covers validation, reading/editing, search/status filters, clipboard export and confirmed deletion.
+- Website article asset starts empty. No sample articles, backend, runtime synchronization or deployment added. Both local backup and static website JSON formats are documented in ARTICLES.md.
+- Original static website content remains unchanged apart from the additive Articles section/navigation and a responsive navbar sizing fix revealed by tests.

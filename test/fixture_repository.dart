@@ -124,6 +124,9 @@ class FixtureRepository implements PortfolioRepository {
   }
 
   @override
+  RecordRepository<Article> get articles =>
+      _FixtureRecords(this, 'articles', Article.fromJson);
+  @override
   RecordRepository<Education> get education =>
       _FixtureRecords(this, 'education', Education.fromJson);
   @override

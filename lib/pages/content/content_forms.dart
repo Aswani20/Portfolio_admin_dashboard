@@ -235,3 +235,25 @@ const sectionFields = [
     required: false,
   ),
 ];
+
+final articleFields = [
+  const ContentField('title', 'Article title'),
+  const ContentField('summary', 'Short summary', kind: InputKind.paragraph),
+  const ContentField(
+    'body',
+    'Article text',
+    kind: InputKind.paragraph,
+    help: 'Plain text. Blank lines separate paragraphs; no HTML or Markdown rendering.',
+  ),
+  ContentField(
+    'publishedOn',
+    'Publication date',
+    validator: ContentValidation.articleDate,
+    help: 'YYYY-MM-DD. The website shows the three newest dates first. This is not a publication schedule.',
+  ),
+  const ContentField(
+    'isPublished',
+    'Include in website export',
+    kind: InputKind.toggle,
+  ),
+];

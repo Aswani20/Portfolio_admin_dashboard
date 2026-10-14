@@ -5,6 +5,17 @@ import 'project_validation.dart';
 class ContentValidation {
   static String? requiredText(String? value) =>
       value == null || value.trim().isEmpty ? 'This field is required.' : null;
+  static String? articleDate(String? value) {
+    if (!RegExp(r'^\d{4}-\d{2}-\d{2}$').hasMatch(value ?? '')) {
+      return 'Use YYYY-MM-DD.';
+    }
+    final date = DateTime.tryParse(value!);
+    if (date == null || date.toIso8601String().substring(0, 10) != value) {
+      return 'Enter a valid calendar date.';
+    }
+    return null;
+  }
+
   static String? email(String? value) =>
       requiredText(value) ??
       (RegExp(r'^[^\s@]+@[^\s@]+\.[^\s@]+$').hasMatch(value!)
@@ -28,6 +39,10 @@ class ContentValidation {
     }
 
     switch (record) {
+      case Article():
+        requiredFields([record.title, record.summary, record.body]);
+        final error = articleDate(record.publishedOn);
+        if (error != null) throw FormatException(error);
       case Education():
         requiredFields([
           record.degree,

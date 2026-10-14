@@ -2,6 +2,7 @@ import 'portfolio_models.dart';
 
 class PortfolioContent {
   final List<Project> projects;
+  final List<Article> articles;
   final List<Education> education;
   final List<Experience> experiences;
   final List<SkillCategory> skillCategories;
@@ -11,7 +12,12 @@ class PortfolioContent {
   final List<SectionContent> sectionContent;
 
   PortfolioContent.fromJson(Map<String, dynamic> json)
-    : projects = _read(json, 'projects', Project.fromJson),
+    : articles = _read(
+        {...json, 'articles': json['articles'] ?? <dynamic>[]},
+        'articles',
+        Article.fromJson,
+      ),
+      projects = _read(json, 'projects', Project.fromJson),
       education = _read(json, 'education', Education.fromJson),
       experiences = _read(json, 'experiences', Experience.fromJson),
       skillCategories = _read(json, 'skillCategories', SkillCategory.fromJson),
@@ -19,7 +25,8 @@ class PortfolioContent {
       media = _read(json, 'media', MediaAsset.fromJson),
       settings = _read(json, 'settings', SiteSettings.fromJson),
       sectionContent = _read(json, 'sectionContent', SectionContent.fromJson) {
-    if (json.length != 8) {
+    if (json.length != (json.containsKey('articles') ? 9 : 8) ||
+        (json.containsKey('articles') && json['articles'] == null)) {
       throw const FormatException('Unexpected content collections.');
     }
     if (profiles.length != 1 || settings.length != 1) {
@@ -76,6 +83,7 @@ class PortfolioContent {
   }
 
   Map<String, dynamic> toJson() => {
+    'articles': articles.map((v) => v.toJson()).toList(),
     'projects': projects.map((v) => v.toJson()).toList(),
     'education': education.map((v) => v.toJson()).toList(),
     'experiences': experiences.map((v) => v.toJson()).toList(),

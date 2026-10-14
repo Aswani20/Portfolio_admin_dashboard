@@ -111,7 +111,8 @@ profile = dict(id='profile-main', revision=1, name=about['personalInfo'][0]['val
         ('GitHub','githubUrl','iconGithub'),('LinkedIn','linkedinUrl','iconLinkedin'),('WhatsApp','whatsappUrl','iconWhatsapp')]], 'social'),
     orbitIconPaths=a['heroOrbitIcons'])
 media = []
-paths = sorted((root/'assets').rglob('*')) + [root/'web/cv.pdf']
+# Static JSON content is not media; preserve original media ordering/IDs.
+paths = sorted([*(root/'assets/images').rglob('*'), *(root/'assets/icons').rglob('*')]) + [root/'web/cv.pdf']
 for path in paths:
     if not path.is_file(): continue
     relative = path.relative_to(root).as_posix()

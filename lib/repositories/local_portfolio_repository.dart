@@ -61,6 +61,9 @@ class LocalPortfolioRepository implements PortfolioRepository {
   @override
   Future<Uint8List> readMedia(String id) => _store.readMedia(id);
   @override
+  RecordRepository<Article> get articles =>
+      _records('articles', Article.fromJson);
+  @override
   RecordRepository<Project> get projects =>
       _records('projects', Project.fromJson);
   @override

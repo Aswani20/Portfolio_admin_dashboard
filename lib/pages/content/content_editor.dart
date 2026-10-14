@@ -356,8 +356,16 @@ class _ContentEditorState extends State<ContentEditor> {
       key: ValueKey('field-$path'),
       controller: controller,
       enabled: !_saving,
-      minLines: field.kind == InputKind.paragraph ? 3 : 1,
-      maxLines: field.kind == InputKind.paragraph ? 7 : 1,
+      minLines: field.name == 'body'
+          ? 8
+          : field.kind == InputKind.paragraph
+          ? 3
+          : 1,
+      maxLines: field.name == 'body'
+          ? 18
+          : field.kind == InputKind.paragraph
+          ? 7
+          : 1,
       validator:
           field.validator ??
           (field.kind == InputKind.color

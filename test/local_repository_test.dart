@@ -54,7 +54,10 @@ void main() {
     'seed preserves every field, nested relationship, media and order',
     () async {
       final content = await repository.read();
-      expect(content.toJson(), (jsonDecode(seedText) as Map)['content']);
+      expect(content.toJson(), {
+        ...(jsonDecode(seedText) as Map)['content'] as Map,
+        'articles': [],
+      });
       expect(content.projects.length, 8);
       expect(content.education.length, 5);
       expect(content.experiences.length, 3);

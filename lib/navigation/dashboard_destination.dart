@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 enum DashboardDestination {
   overview('Overview', Icons.space_dashboard_outlined, 'Workspace'),
   projects('Projects', Icons.work_outline_rounded, 'Portfolio'),
+  articles('Articles', Icons.article_outlined, 'Portfolio'),
   personal('Personal Information', Icons.person_outline_rounded, 'Portfolio'),
   experience('Experience', Icons.business_center_outlined, 'Portfolio'),
   skills('Skills', Icons.auto_awesome_outlined, 'Portfolio'),

@@ -720,3 +720,53 @@ class SectionContent implements PortfolioRecord {
     'subtitle': subtitle,
   };
 }
+
+class Article implements PortfolioRecord {
+  @override
+  final String id;
+  @override
+  final int revision;
+  final String title, summary, body, publishedOn;
+  final bool isPublished;
+  const Article({
+    required this.id,
+    this.revision = 0,
+    required this.title,
+    required this.summary,
+    required this.body,
+    required this.publishedOn,
+    this.isPublished = false,
+  });
+  factory Article.fromJson(Map<String, dynamic> json) {
+    _keys(json, [
+      'id',
+      'revision',
+      'title',
+      'summary',
+      'body',
+      'publishedOn',
+      'isPublished',
+    ]);
+    final record = Article(
+      id: _field<String>(json, 'id'),
+      revision: _field<int>(json, 'revision'),
+      title: _field<String>(json, 'title'),
+      summary: _field<String>(json, 'summary'),
+      body: _field<String>(json, 'body'),
+      publishedOn: _field<String>(json, 'publishedOn'),
+      isPublished: _field<bool>(json, 'isPublished'),
+    );
+    validateRecord(record);
+    return record;
+  }
+  @override
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'revision': revision,
+    'title': title,
+    'summary': summary,
+    'body': body,
+    'publishedOn': publishedOn,
+    'isPublished': isPublished,
+  };
+}

@@ -21,7 +21,7 @@ class PortfolioTransfer {
   static String encode(PortfolioContent content, Map<String, Uint8List> files) {
     final text = const JsonEncoder.withIndent('  ').convert({
       'format': 'portfolio-admin-transfer',
-      'schemaVersion': 1,
+      'schemaVersion': 2,
       'content': content.toJson(),
       'mediaFiles': {
         for (final entry in files.entries)
@@ -46,9 +46,16 @@ class PortfolioTransfer {
     final document = jsonObject(jsonDecode(text));
     if (document.length != 4 ||
         document['format'] != 'portfolio-admin-transfer' ||
-        document['schemaVersion'] != 1) {
+        ![1, 2].contains(document['schemaVersion'])) {
       throw const FormatException(
-        'Unsupported transfer format or schema. Expected portfolio-admin-transfer schema 1 with content and mediaFiles.',
+        'Unsupported transfer format or schema. Expected portfolio-admin-transfer schema 1 or 2 with content and mediaFiles.',
+      );
+    }
+    final raw = jsonObject(document['content']);
+    if ((document['schemaVersion'] == 1 && raw.containsKey('articles')) ||
+        (document['schemaVersion'] == 2 && !raw.containsKey('articles'))) {
+      throw const FormatException(
+        'Collections do not match the transfer schema.',
       );
     }
     _checkDuplicates(document['content'], 'content');
@@ -56,6 +63,7 @@ class PortfolioTransfer {
     final content = PortfolioContent.fromJson(jsonObject(document['content']));
     for (final record in <PortfolioRecord>[
       ...content.projects,
+      ...content.articles,
       ...content.education,
       ...content.experiences,
       ...content.skillCategories,
@@ -94,7 +102,7 @@ class PortfolioTransfer {
   }
 
   String get summary =>
-      '${content.projects.length} projects, '
+      '${content.articles.length} articles, ${content.projects.length} projects, '
       '${content.education.length} education entries, '
       '${content.experiences.length} experience entries, '
       '${content.skillCategories.length} skill categories, '

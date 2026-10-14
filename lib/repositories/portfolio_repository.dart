@@ -11,7 +11,13 @@ abstract interface class RecordRepository<T extends PortfolioRecord> {
   Future<void> delete(String id, {required int expectedRevision});
 }
 
-enum OrderedCollection { projects, education, experiences, skillCategories }
+enum OrderedCollection {
+  articles,
+  projects,
+  education,
+  experiences,
+  skillCategories,
+}
 
 abstract interface class PortfolioRepository implements MediaRepository {
   Future<PortfolioContent> read();
@@ -37,6 +43,7 @@ abstract interface class PortfolioRepository implements MediaRepository {
     List<String> ids, {
     required Map<String, int> expectedRevisions,
   });
+  RecordRepository<Article> get articles;
   RecordRepository<Project> get projects;
   RecordRepository<Education> get education;
   RecordRepository<Experience> get experiences;

@@ -7,26 +7,26 @@ Open **Settings → Import, export and backups**.
 - **Import / Restore** opens either kind of file, validates it, and previews record/media counts. Cancel changes nothing. **Back up and replace** replaces all collections, including removing records absent from the file. There is deliberately no implicit merge or duplicate-ID conflict resolution.
 - Save with a new filename. Existing export/backup files are never overwritten by these controls.
 
-## JSON format, version 1
+## JSON format, version 2 (legacy version 1 accepted)
 
 The exact top-level keys are:
 
 ```json
 {
   "format": "portfolio-admin-transfer",
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "content": {},
   "mediaFiles": {}
 }
 ```
 
-This example shows the envelope only; an empty `content` object is not valid. `content` must contain all eight collections: `projects`, `education`, `experiences`, `skillCategories`, `profiles`, `media`, `settings`, `sectionContent`. Their fields are the existing model `toJson` format in `lib/models/portfolio_models.dart`. Export a file from the app for a complete editable example. Exactly one profile and settings record are required. Certifications remain education entries with certificate links. Array order is display order. Nested records remain inside their parent record.
+This example shows the envelope only; an empty `content` object is not valid. Legacy version 1 has the original eight collections and imports with no articles. `content` must contain all nine collections: `articles`, `projects`, `education`, `experiences`, `skillCategories`, `profiles`, `media`, `settings`, `sectionContent`. Their fields are the existing model `toJson` format in `lib/models/portfolio_models.dart`. Export a file from the app for a complete editable example. Exactly one profile and settings record are required. Certifications remain education entries with certificate links. Array order is display order. Nested records remain inside their parent record.
 
 Each record retains its stable ID and a positive revision in the transfer file. Imported top-level revision tokens are renewed for local concurrency protection; IDs and content relationships are retained. Unknown fields, unknown schema versions, invalid field types/required values/URLs, duplicate IDs within a collection or nested list, unsafe relative media paths, and references to nonexistent media metadata are rejected before applying changes. Duplicate-ID errors identify the collection path and ID. IDs can occur in distinct collection scopes as the existing models permit.
 
 `mediaFiles` is keyed by a media record ID. Each value has exactly `sha256` (hex digest of decoded bytes) and `base64` (file bytes). For example its shape is `"media-id": {"sha256": "...", "base64": "..."}`. Every payload must have metadata and a matching checksum. Checksums detect corruption, not authenticity. Empty `mediaFiles` is a content-only export. A backup may be incomplete if source files were already missing: metadata is retained and no bytes are fabricated.
 
-Maximum UTF-8 JSON size is 256 MB, including base64 overhead. Backups that exceed this bound fail; automatic replacement is aborted if its safety backup cannot be created. No schema migration is silently guessed. A future schema must add an explicit migration and validation path before being accepted. Transfer JSON is distinct from the internal `revision-*.json` snapshot envelope, which is not accepted as an import.
+Maximum UTF-8 JSON size is 256 MB, including base64 overhead. Backups that exceed this bound fail; automatic replacement is aborted if its safety backup cannot be created. Schema 1 migrates deterministically by adding an empty article list; other unknown versions are rejected. A future schema must add an explicit migration and validation path before being accepted. Transfer JSON is distinct from the internal `revision-*.json` snapshot envelope, which is not accepted as an import.
 
 Exports contain only the allowlisted portfolio model fields and, for backups, referenced media bytes. They do not export environment variables, credentials, provider tokens, application configuration, unrelated filesystem files, or historical snapshots. The public profile/contact content remains part of the portfolio export. There are no analytics/Firebase secrets in this data model.
 

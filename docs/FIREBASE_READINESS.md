@@ -66,3 +66,7 @@ For a small portfolio, aggregate reads can check draft `contentRevision` before/
 5. Publish only after approval and validation. Keep the original static source, previous release and local backup for rollback. Add multi-device synchronization only after conflict/tombstone and retry behavior are tested; do not silently push local edits at startup.
 
 No local schema/data changes were made in this readiness phase. The current offline CRUD, media, statistics and backup/restore workflows remain supported.
+
+## Articles added after the readiness review
+
+The local schema is now 2, with a ninth `articles` collection. Proposed cloud mapping: article document ID = stable ID; fields `title`, `summary`, `body`, `publishedOn` (YYYY-MM-DD string), `isPublished`, `displayOrder`, plus revision/audit metadata. Public releases include only approved articles and omit local revision tokens. The current implementation uses manual static JSON export only; see [Articles](ARTICLES.md). The earlier eight-collection table describes the pre-article baseline.

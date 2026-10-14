@@ -1,6 +1,6 @@
 # Portfolio Admin Dashboard
 
-Local Windows desktop application for managing projects, media, personal information/About, contact/social links, experience/milestones, skills, education/certification links, and website settings/headings. Includes search, filtering, display ordering, repository-derived Overview counts and JSON backup/restore.
+Local Windows desktop application for writing articles and managing projects, media, personal information/About, contact/social links, experience/milestones, skills, education/certification links, and website settings/headings. Includes search, filtering, display ordering, repository-derived Overview counts and JSON backup/restore.
 
 **The Dashboard does not synchronize with or publish to the website.** The website continues to use its existing static Dart source. Website Analytics displays “Analytics are not connected yet”; no real visitor statistics are collected or retrieved. Firebase is not configured or implemented.
 
@@ -77,7 +77,7 @@ In **Settings → Import, export and backups**:
 3. **Import / Restore** accepts either supported JSON format, validates it, and previews counts. **Back up and replace** replaces all content collections after confirmation; there is no implicit merge. An automatic backup is saved first, and a concurrent edit invalidates the preview.
 4. To undo a replacement, import the automatic backup path shown in the success message. Existing physical files are preserved. IDs/relationships/order are kept, while local revisions and restored media paths are renewed.
 
-A metadata-only import reuses matching existing files when possible; otherwise previews remain unavailable. Supported transfer schema is version 1 with a 256 MB JSON limit. Unknown schemas, duplicate records, invalid references and bad media checksums are rejected. See [complete transfer format and behavior](docs/DATA_TRANSFER.md).
+A metadata-only import reuses matching existing files when possible; otherwise previews remain unavailable. Supported transfer schemas are versions 1 and 2 with a 256 MB JSON limit. Unknown schemas, duplicate records, invalid references and bad media checksums are rejected. See [complete transfer format and behavior](docs/DATA_TRANSFER.md).
 
 For a filesystem backup, close **all** Dashboard instances and copy the entire application-data folder. To recover that copy, keep the current folder separately and restore the complete backup folder at the original location while the app is closed; do not combine revision histories. The in-app restore screen requires a readable store. An incomplete/corrupt store has no startup recovery wizard: preserve it and use a complete known-good folder backup or seek repair before retrying. Never delete the store as a routine troubleshooting step.
 
@@ -107,3 +107,7 @@ The process checks use temporary storage and never modify the real local store. 
 `lib/main.dart` composes interfaces with the local implementation; `models`, `repositories`, `data`, `services`, `pages` and `widgets` separate content, persistence and UI. `assets/seed` contains the frozen initial content/media; `windows` contains the native runner; `test` and `tool` contain verification code. No Firebase dependencies are installed.
 
 See [content management](docs/CONTENT_MANAGEMENT.md), [Projects](docs/PROJECTS_MANAGEMENT.md), [media](docs/MEDIA_MANAGEMENT.md), [list browsing/order](docs/LIST_BROWSING.md), [website analysis](docs/CONTENT_ANALYSIS.md), and [file inventory](docs/CREATED_FILES.md). Historical verification documents describe their respective earlier phases.
+
+## Articles
+
+Use **Articles** to write/edit local drafts and mark articles for **Copy website JSON**. Manually paste that export into the website static asset and rebuild; no synchronization is performed. Empty static article data hides the website section and navigation link. See [article publishing and migration](docs/ARTICLES.md).

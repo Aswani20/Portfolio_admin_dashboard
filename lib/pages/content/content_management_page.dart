@@ -3,6 +3,9 @@ import '../../widgets/list_controls.dart';
 import '../../widgets/data_transfer_panel.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../../services/article_export.dart';
 
 import '../../models/portfolio_content.dart';
 import '../../models/portfolio_models.dart';
@@ -181,18 +184,21 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
   }
 
   bool get _isList => [
+    DashboardDestination.articles,
     DashboardDestination.experience,
     DashboardDestination.skills,
     DashboardDestination.education,
     DashboardDestination.certifications,
   ].contains(widget.destination);
   OrderedCollection? get _ordered => switch (widget.destination) {
+    DashboardDestination.articles => OrderedCollection.articles,
     DashboardDestination.experience => OrderedCollection.experiences,
     DashboardDestination.skills => OrderedCollection.skillCategories,
     DashboardDestination.education => OrderedCollection.education,
     _ => null,
   };
   List<PortfolioRecord> get _all => switch (widget.destination) {
+    DashboardDestination.articles => _content!.articles,
     DashboardDestination.experience => _content!.experiences,
     DashboardDestination.skills => _content!.skillCategories,
     DashboardDestination.education ||
@@ -202,6 +208,16 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
   List<PortfolioRecord> get _matched {
     final c = _content!;
     switch (widget.destination) {
+      case DashboardDestination.articles:
+        return _browse.matching<Article>(
+          c.articles,
+          searchText: (a) => '${a.title} ${a.summary} ${a.body}',
+          title: (a) => a.title,
+          secondary: (a) => a.publishedOn,
+          current: (a) => a.isPublished,
+          matchesFilter: (a, f) =>
+              f == 'published' ? a.isPublished : f == 'draft' && !a.isPublished,
+        );
       case DashboardDestination.experience:
         return _browse.matching<Experience>(
           c.experiences,
@@ -244,6 +260,10 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
   }
 
   Map<String, String> get _filters => switch (widget.destination) {
+    DashboardDestination.articles => {
+      'published': 'Included in export',
+      'draft': 'Drafts',
+    },
     DashboardDestination.skills => {
       for (final c in _content!.skillCategories) c.id: c.title,
     },
@@ -268,6 +288,8 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
             enabled: !_busy,
             searchLabel: widget.destination == DashboardDestination.skills
                 ? 'Search categories or technologies'
+                : widget.destination == DashboardDestination.articles
+                ? 'Search articles'
                 : 'Search titles, organizations or timeline details',
             filterLabel: widget.destination == DashboardDestination.skills
                 ? 'Category'
@@ -281,9 +303,13 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
                 'secondary':
                     widget.destination == DashboardDestination.experience
                     ? 'Company A-Z'
+                    : widget.destination == DashboardDestination.articles
+                    ? 'Date oldest first'
                     : 'Institution A-Z',
               if (widget.destination != DashboardDestination.skills)
-                'current': 'Current first',
+                'current': widget.destination == DashboardDestination.articles
+                    ? 'Included first'
+                    : 'Current first',
             },
           ),
           ListPager(
@@ -297,7 +323,9 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
           if (_ordered != null)
             Text(
               _browse.canReorder
-                  ? 'Arrows save the website display order. Sorting only changes this view.'
+                  ? widget.destination == DashboardDestination.articles
+                        ? 'Website: newest dates first. Saved order breaks ties between articles on the same date.'
+                        : 'Arrows save the website display order. Sorting only changes this view.'
                   : 'Reset filters and choose Saved order to change website display order.',
             ),
           if (_all.isNotEmpty && matched.isEmpty)
@@ -368,6 +396,13 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
               icon: const Icon(Icons.add),
               label: Text('Add $_recordLabel'),
             ),
+          if (widget.destination == DashboardDestination.articles &&
+              _content != null)
+            OutlinedButton.icon(
+              onPressed: _busy ? null : _exportArticles,
+              icon: const Icon(Icons.copy),
+              label: const Text('Copy website JSON'),
+            ),
           OutlinedButton.icon(
             key: const ValueKey('refresh-content'),
             onPressed: _busy || _loading ? null : _reload,
@@ -392,6 +427,7 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
     ],
   );
   String get _description => switch (widget.destination) {
+    DashboardDestination.articles => 'Write locally, then copy published articles into the website static JSON file and rebuild. Nothing is synchronized automatically.',
     DashboardDestination.personal => 'Hero, About Me, contact information and social links. One shared profile, with original formatting preserved.',
     DashboardDestination.experience =>
       'Roles, responsibilities and nested career milestones in website order.',
@@ -404,11 +440,18 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
     _ => '',
   };
   String get _recordLabel => switch (widget.destination) {
+    DashboardDestination.articles => 'article',
     DashboardDestination.experience => 'experience',
     DashboardDestination.skills => 'category',
     _ => 'education',
   };
   VoidCallback? get _add => switch (widget.destination) {
+    DashboardDestination.articles => () => _edit(
+      'Add article',
+      articleFields,
+      widget.repository.articles,
+      Article.fromJson,
+    ),
     DashboardDestination.experience => () => _edit(
       'Add experience',
       experienceFields,
@@ -432,6 +475,56 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
   List<Widget> _body() {
     final c = _content!;
     switch (widget.destination) {
+      case DashboardDestination.articles:
+        return [
+          if (c.articles.isEmpty)
+            const Text(
+              'No articles yet. Add your first article; the website stays hidden until published articles are copied there.',
+            ),
+          for (final article in _browse.slice(_matched).cast<Article>())
+            _card(
+              article.id,
+              article.title,
+              [
+                _text(
+                  'Status',
+                  article.isPublished ? 'Included in website export' : 'Draft',
+                ),
+                _text('Date', article.publishedOn),
+                _text('Summary', article.summary),
+                TextButton(
+                  onPressed: () => showDialog<void>(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text(article.title),
+                      content: SizedBox(
+                        width: 680,
+                        child: SingleChildScrollView(
+                          child: SelectableText(article.body),
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('Close'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  child: const Text('Read article'),
+                ),
+              ],
+              () => _edit(
+                'Edit article',
+                articleFields,
+                widget.repository.articles,
+                Article.fromJson,
+                article,
+              ),
+              remove: () =>
+                  _delete(widget.repository.articles, article, article.title),
+            ),
+        ];
       case DashboardDestination.personal:
         final p = c.profiles.single;
         return [
@@ -645,6 +738,23 @@ class _ContentManagementPageState extends State<ContentManagementPage> {
         ];
       default:
         return [];
+    }
+  }
+
+  Future<void> _exportArticles() async {
+    setState(() => _busy = true);
+    try {
+      final content = await widget.repository.read();
+      await Clipboard.setData(
+        ClipboardData(text: exportWebsiteArticles(content.articles)),
+      );
+      _message(
+        'Copied published articles. Paste into portfolio_app/assets/content/articles.json, then rebuild the website.',
+      );
+    } catch (error) {
+      _message('Could not copy articles: $error');
+    } finally {
+      if (mounted) setState(() => _busy = false);
     }
   }
 
